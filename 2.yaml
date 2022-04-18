@@ -8,7 +8,7 @@ proxies:
   - {name: rack, server: rack.cnhbwh027.eu.org, port: 2096, type: vmess, uuid: d06bb0dc-c6ee-411f-a1ca-51130a89361f, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-path: /, ws-headers: {Host: rack.cnhbwh027.eu.org}}
   - {name: oracle, server: ov2.hb027wh.eu.org, port: 2087, type: vmess, uuid: e56e6a73-0b7b-4e52-c714-68d9d4fe7db5, alterId: 0, cipher: auto, tls: true, skip-cert-verify: true, network: ws, ws-path: /, ws-headers: {Host: ov2.hb027wh.eu.org}}
   - {name: oracle直连, server: 168.138.183.133, port: 54321, type: vmess, uuid: 306b36b4-e6b0-46d7-be95-afa6cedb114c, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true}
-  - {name: rack直连, server: 107.174.242.74, port: 17888, type: vmess, uuid: 181af37a-644f-40de-a9ba-f6b52a3b8d07, alterId: 0, cipher: auto, tls: false, skip-cert-verify: true}
+  - {name: oracle-trojan, server: o.10jqk.eu.org, port: 443, type: trojan, password: BApg1r3s5wSayNOS, sni: o.10jqk.eu.org, skip-cert-verify: true}
 proxy-groups:
   - name: 🔰 节点选择
     type: select
@@ -17,7 +17,7 @@ proxy-groups:
       - 🎯 全球直连
       - rack
       - oracle
-      - rack直连
+      - oracle-trojan
       - oracle直连
   - name: ♻️ 自动选择
     type: url-test
@@ -26,7 +26,7 @@ proxy-groups:
     proxies:
       - rack
       - oracle
-      - rack直连
+      - oracle-trojan
       - oracle直连
   - name: 🌍 国外媒体
     type: select
@@ -36,7 +36,7 @@ proxy-groups:
       - 🎯 全球直连
       - rack
       - oracle
-      - rack直连
+      - oracle-trojan
       - oracle直连
   - name: 🌏 国内媒体
     type: select
@@ -50,7 +50,7 @@ proxy-groups:
       - 🔰 节点选择
       - rack
       - oracle
-      - rack直连
+      - oracle-trojan
       - oracle直连
   - name: 📲 电报信息
     type: select
@@ -59,7 +59,7 @@ proxy-groups:
       - 🎯 全球直连
       - rack
       - oracle
-      - rack直连
+      - oracle-trojan
       - oracle直连
   - name: 🍎 苹果服务
     type: select
@@ -69,7 +69,7 @@ proxy-groups:
       - ♻️ 自动选择
       - rack
       - oracle
-      - rack直连
+      - oracle-trojan
       - oracle直连
   - name: 🎯 全球直连
     type: select
@@ -88,7 +88,7 @@ proxy-groups:
       - ♻️ 自动选择
       - rack
       - oracle
-      - rack直连
+      - oracle-trojan
       - oracle直连
 rules:
  - DOMAIN-SUFFIX,local,🎯 全球直连
